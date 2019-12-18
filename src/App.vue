@@ -1,53 +1,32 @@
 <template>
-    <a-layout id="home-page" style="height: 100%">
-        <a-layout-sider
-                :trigger="null"
-                collapsible
-                v-model="collapsed"
-                style="background: #1F2126"
-        >
-            <div class="logo"/>
-            <a-menu style="background: #1F2126" mode="inline" :defaultSelectedKeys="['1']">
-                <a-menu-item key="1">
-                    <a-icon type="user"/>
-                    <span class="menu-name">项目</span>
+    <a-layout id="components-layout-demo-top-side-2" style="height: 100%">
+        <a-layout-header class="header" style="background: #022144;padding-left: 0">
+            <div class="logo">
+                <div>
+                    <svg class="iconApp" aria-hidden="true" style="font-size:6px">
+                        <use xlink:href="#icondevops2"></use>
+                    </svg>
+                </div>
+                <span style="color: white">DevOps</span>
+            </div>
+            <a-menu
+                    mode="horizontal"
+                    :defaultSelectedKeys="['2']"
+                    :style="{ lineHeight: '64px',background:'#022144',color:'#B5B8BA','font-size':'16px'}">
+                <a-menu-item key="develop">
+                    <router-link to="/develop" style="color: #ffffff;font-size: 14px;font-weight: 600">CI/CD</router-link>
                 </a-menu-item>
-                <a-menu-item key="2">
-                    <a-icon type="video-camera"/>
-                    <span  class="menu-name">收藏夹</span>
+                <a-menu-item key="test">
+                    <router-link to="/test" style="color: #ffffff;font-size: 14px;font-weight: 600">测试中心</router-link>
                 </a-menu-item>
-                <a-menu-item key="4">
-                    <a-icon type="upload"/>
-                    <span  class="menu-name">发现镜像</span>
-                </a-menu-item>
-                <a-menu-item key="5">
-                    <a-icon type="upload"/>
-                    <span  class="menu-name">集群管理</span>
-                </a-menu-item>
-                <a-menu-item key="6">
-                    <a-icon type="upload"/>
-                    <span  class="menu-name">应用</span>
-                </a-menu-item>
-                <a-menu-item key="7">
-                    <a-icon type="upload"/>
-                    <span  class="menu-name">Stack</span>
-                </a-menu-item>
-                <a-menu-item key="8">
-                    <a-icon type="upload"/>
-                    <span  class="menu-name">开发者中心</span>
+                <a-menu-item key="operation">
+                    <router-link to="/operation" style="color: #ffffff;font-size: 14px;font-weight: 600">运维中心</router-link>
                 </a-menu-item>
             </a-menu>
-        </a-layout-sider>
+        </a-layout-header>
         <a-layout>
-            <a-layout-header style="background: #fff; padding: 0">
-                <a-icon
-                        class="trigger"
-                        :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-                        @click="()=> collapsed = !collapsed"
-                />
-            </a-layout-header>
-            <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
-                Content
+            <a-layout-content>
+                <router-view></router-view>
             </a-layout-content>
         </a-layout>
     </a-layout>
@@ -55,6 +34,7 @@
 
 <script>
     import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN'
+    import router from './router'
 
     export default {
         name: 'app',
@@ -64,11 +44,14 @@
                 collapsed: false,
             }
         },
-        components: {}
+        components: {},
+        router: router
     }
 </script>
 
 <style>
+    @import "assets/iconfont/iconfont.css";
+
     html, body {
         margin: 0;
         height: 100%;
@@ -82,23 +65,38 @@
         text-align: center;
         color: #2c3e50;
     }
-.menu-name{
-  color: #9ba3af;
-}
-    #home-page .trigger {
-        font-size: 18px;
-        line-height: 64px;
-        padding: 0 24px;
-        cursor: pointer;
-        transition: color .3s;
+
+    #components-layout-demo-top-side-2 .logo {
+        width: 200px;
+        height: 100%;
+        /* background: rgba(37, 40, 45, 1.0);*/
+        float: left;
     }
 
-    #home-page .trigger:hover {
-        color: #1890ff;
+    .header {
+        background: #fff;
     }
 
-    #home-page .logo {
-        height: 60px;
-        background: rgba(37,40,45 .2);
+    .icon {
+        width: 2.5em;
+        height: 2.5em;
+        vertical-align: -1em;
+        fill: currentColor;
+        overflow: hidden;
     }
+
+    .iconApp {
+        width: 5em;
+        height: 5em;
+        vertical-align: -0.5em;
+        fill: currentColor;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+    .menu-style{
+        color:#fff;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
 </style>

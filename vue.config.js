@@ -1,8 +1,8 @@
 module.exports = {
     devServer: {
-        proxy: process.env.VUE_APP_APIURL,
+        proxy: 'http://localhost:8080',
         /*本地开发服务器端口*/
-        port: 8088
+        port: 80
     },
     publicPath: "/",
     outputDir: "/build/devops",
