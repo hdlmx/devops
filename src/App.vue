@@ -3,26 +3,56 @@
         <a-layout-header class="header" style="background: #022144;padding-left: 0">
             <div class="logo">
                 <div>
-                    <svg class="iconApp" aria-hidden="true" style="font-size:6px">
+                    <svg class="iconApp" aria-hidden="true" style="font-size:12px;margin-left: 30px">
                         <use xlink:href="#icondevops2"></use>
                     </svg>
+
                 </div>
-                <span style="color: white">DevOps</span>
             </div>
-            <a-menu
-                    mode="horizontal"
-                    :defaultSelectedKeys="['2']"
-                    :style="{ lineHeight: '64px',background:'#022144',color:'#B5B8BA','font-size':'16px'}">
-                <a-menu-item key="develop">
-                    <router-link to="/develop" style="color: #ffffff;font-size: 14px;font-weight: 600">CI/CD</router-link>
-                </a-menu-item>
-                <a-menu-item key="test">
-                    <router-link to="/test" style="color: #ffffff;font-size: 14px;font-weight: 600">测试中心</router-link>
-                </a-menu-item>
-                <a-menu-item key="operation">
-                    <router-link to="/operation" style="color: #ffffff;font-size: 14px;font-weight: 600">运维中心</router-link>
-                </a-menu-item>
-            </a-menu>
+            <a-row>
+                <a-col span="3">
+                    <div><span style="color: #ffffff;font-size: 25px;line-height:60px;">DevOps平台</span></div>
+                </a-col>
+                <a-col span="15">
+                    <a-menu
+                            mode="horizontal"
+                            :defaultSelectedKeys="['2']"
+                            :style="{ lineHeight: '64px',background:'#022144',color:'#B5B8BA','font-size':'16px','margin-left':'30px'}">
+                        <a-menu-item key="develop">
+                            <router-link to="/develop" style="color: #ffffff;font-size: 14px;font-weight: 600">开发中心
+                            </router-link>
+                        </a-menu-item>
+                        <a-menu-item key="test">
+                            <router-link to="/test" style="color: #ffffff;font-size: 14px;font-weight: 600">测试中心
+                            </router-link>
+                        </a-menu-item>
+                        <a-menu-item key="operation">
+                            <router-link to="/operation" style="color: #ffffff;font-size: 14px;font-weight: 600">运维中心
+                            </router-link>
+                        </a-menu-item>
+                    </a-menu>
+
+                </a-col>
+                <a-col span="4">
+                    <a-icon type="user" style="color: white;font-size: 25px"/>
+                    <a-dropdown>
+                        <a class="ant-dropdown-link" style="color: white" @click="e => e.preventDefault()">
+                            项目经理
+                            <a-icon type="down"/>
+                        </a>
+                        <a-menu slot="overlay">
+                            <a-menu-item>
+                                <a href="javascript:;">修改信息</a>
+                            </a-menu-item>
+                            <a-menu-item>
+                                <a href="javascript:;">退出</a>
+                            </a-menu-item>
+                        </a-menu>
+                    </a-dropdown>
+                </a-col>
+            </a-row>
+
+
         </a-layout-header>
         <a-layout>
             <a-layout-content>
@@ -67,7 +97,7 @@
     }
 
     #components-layout-demo-top-side-2 .logo {
-        width: 200px;
+
         height: 100%;
         /* background: rgba(37, 40, 45, 1.0);*/
         float: left;
@@ -93,8 +123,9 @@
         overflow: hidden;
         margin-right: 10px;
     }
-    .menu-style{
-        color:#fff;
+
+    .menu-style {
+        color: #fff;
         font-weight: 600;
         font-size: 24px;
     }

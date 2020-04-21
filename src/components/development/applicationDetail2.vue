@@ -77,6 +77,31 @@
                         </a-form-item>
                     </a-col>
                 </a-row>
+                <a-row>
+                    <a-col :span="24">
+                        <a-form-item label="镜像仓库URL">
+                            <a-input
+                                    v-decorator="['imageRepository.url', {rules: [{ required: true, message: '请输入代码仓库url' }]}]"
+                                    placeholder="请输入代码仓库url"/>
+                        </a-form-item>
+                    </a-col>
+                </a-row>
+                <a-row :gutter="16">
+                    <a-col :span="12">
+                        <a-form-item label="镜像仓库用户名">
+                            <a-input
+                                    v-decorator="['imageRepository.username', {rules: [{ required: true, message: '请输入镜像仓库用户名' }]}]"
+                                    placeholder="请输入代码仓库用户名"/>
+                        </a-form-item>
+                    </a-col>
+                    <a-col :span="12">
+                        <a-form-item label="镜像仓库密码">
+                            <a-input type="password"
+                                     v-decorator="['imageRepository.password', {rules: [{ required: true, message: '请输入镜像仓库密码' }]}]"
+                                     placeholder="请输入git仓库密码"/>
+                        </a-form-item>
+                    </a-col>
+                </a-row>
                 <a-row :gutter="16">
                     <a-col :span="12">
                         <a-form-item label="语言/平台">

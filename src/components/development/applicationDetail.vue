@@ -78,7 +78,7 @@
                         </a-form-item>
                     </a-col>
                 </a-row>
-                <!--<a-row>
+                <a-row>
                     <a-col :span="24">
                         <a-form-item label="镜像仓库URL">
                             <a-input
@@ -102,7 +102,7 @@
                                      placeholder="请输入git仓库密码"/>
                         </a-form-item>
                     </a-col>
-                </a-row>-->
+                </a-row>
                 <a-row :gutter="16">
                     <a-col :span="12">
                         <a-form-item label="语言/平台">
@@ -116,7 +116,6 @@
                         </a-form-item>
                     </a-col>
                 </a-row>
-
             </a-form>
             <div :style="{position: 'absolute',left: 0,bottom: 0,width: '100%', borderTop: '1px solid #e9e9e9',
                           padding: '10px 16px',

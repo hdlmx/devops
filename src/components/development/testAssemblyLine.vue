@@ -39,36 +39,11 @@
 </template>
 
 <script>
-
     export default {
-        name: "development",
+        name: "testAssemblyLine"
     }
 </script>
 
 <style scoped>
-    .iconApp {
-        width: 1.8em;
-        height: 1.8em;
-        vertical-align: -0.5em;
-        fill: currentColor;
-        overflow: hidden;
-        margin-right: 2px;
-    }
 
-    .profile {
-        width: 1.6em;
-        height: 1.6em;
-        vertical-align: -0.5em;
-        fill: currentColor;
-        overflow: hidden;
-        margin-right: 2px;
-    }
-    .containerApp{
-        width: 2em;
-        height: 2em;
-        vertical-align: -0.5em;
-        fill: currentColor;
-        overflow: hidden;
-        margin-right: 2px;
-    }
 </style>
